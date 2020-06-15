@@ -7,38 +7,23 @@
 //
 
 import UIKit
+import Foundation
 
-class ContactsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    private let contacts = ContactAPI.getContacts()
-    let contactsTableView = UITableView()
+class ContactsViewController: UIViewController {
+
+    fileprivate lazy var contactsTableView = UITableView()
     
     override func viewDidLoad() {
-        contactsTableView.dataSource = self
-        contactsTableView.delegate = self
-        contactsTableView.register(ContactTableViewCell.self, forCellReuseIdentifier: "contactCell")
-        view.backgroundColor = UIColor(red: 0.2431372549, green: 0.7647058824, blue: 0.8392156863, alpha: 1)
-        view.addSubview(self.contactsTableView)
         setUpView()
         setUpNavigation()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//      let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
-//      cell.textLabel?.text = contacts[indexPath.row].name
-        cell.contact = contacts[indexPath.row]
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
-    func setUpView() {
+    fileprivate func setUpView() {
+        contactsTableView.delegate = self
+        contactsTableView.dataSource = self
+        contactsTableView.register(ContactTableViewCell.self, forCellReuseIdentifier: "contactCell")
+        view.backgroundColor = UIColor(red: 0.2431372549, green: 0.7647058824, blue: 0.8392156863, alpha: 1)
+        view.addSubview(self.contactsTableView)
         NSLayoutConstraint.activate([
             contactsTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             contactsTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -55,5 +40,25 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.2431372549, green: 0.7647058824, blue: 0.8392156863, alpha: 1)
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1)]
+    }
+}
+
+extension ContactsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contactsViewModel.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //      let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
+        //      cell.textLabel?.text = contacts[indexPath.row].name
+        cell.contact = contactsViewModel[indexPath.row].contact
+        return cell
+    }
+}
+
+extension ContactsViewController: UITableViewDelegate {
+ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }

@@ -62,6 +62,7 @@
 			children = (
 				2563F51C2496F81E0076E1FA /* AppDelegate.swift */,
 				2563F51E2496F81E0076E1FA /* SceneDelegate.swift */,
+				2563F53E24971F7F0076E1FA /* View Model */,
 				2563F534249709810076E1FA /* Model */,
 				2563F5332497091A0076E1FA /* View */,
 				2563F532249709040076E1FA /* Controller */,
@@ -91,10 +92,17 @@
 		2563F534249709810076E1FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2563F53624970B970076E1FA /* ContactAPI.swift */,
 				2563F53824970BA80076E1FA /* Contact.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2563F53E24971F7F0076E1FA /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				2563F53624970B970076E1FA /* ContactAPI.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
