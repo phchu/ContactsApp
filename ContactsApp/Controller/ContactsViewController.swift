@@ -10,7 +10,6 @@ import UIKit
 import Foundation
 
 class ContactsViewController: UIViewController {
-
     fileprivate lazy var contactsTableView = UITableView()
     
     override func viewDidLoad() {
@@ -58,7 +57,11 @@ extension ContactsViewController: UITableViewDataSource {
 }
 
 extension ContactsViewController: UITableViewDelegate {
- func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let profile = contactsViewModel[indexPath.row].contact
+        navigationController?.pushViewController(ProfileViewController(profile), animated: true)
     }
 }

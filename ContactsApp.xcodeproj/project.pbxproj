@@ -15,6 +15,8 @@
 		2563F53724970B970076E1FA /* ContactAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2563F53624970B970076E1FA /* ContactAPI.swift */; };
 		2563F53924970BA80076E1FA /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2563F53824970BA80076E1FA /* Contact.swift */; };
 		2563F53B24970BC90076E1FA /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2563F53A24970BC90076E1FA /* ContactTableViewCell.swift */; };
+		2563F5422497679A0076E1FA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2563F5412497679A0076E1FA /* ProfileViewController.swift */; };
+		2563F54424976F040076E1FA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2563F54324976F040076E1FA /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		2563F53624970B970076E1FA /* ContactAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactAPI.swift; sourceTree = "<group>"; };
 		2563F53824970BA80076E1FA /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2563F53A24970BC90076E1FA /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		2563F5412497679A0076E1FA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2563F54324976F040076E1FA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				2563F5302496F9FF0076E1FA /* ContactsViewController.swift */,
+				2563F5412497679A0076E1FA /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -85,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				2563F53A24970BC90076E1FA /* ContactTableViewCell.swift */,
+				2563F54324976F040076E1FA /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,10 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2563F54424976F040076E1FA /* ProfileView.swift in Sources */,
 				2563F53B24970BC90076E1FA /* ContactTableViewCell.swift in Sources */,
 				2563F51D2496F81E0076E1FA /* AppDelegate.swift in Sources */,
 				2563F53724970B970076E1FA /* ContactAPI.swift in Sources */,
 				2563F53924970BA80076E1FA /* Contact.swift in Sources */,
+				2563F5422497679A0076E1FA /* ProfileViewController.swift in Sources */,
 				2563F51F2496F81E0076E1FA /* SceneDelegate.swift in Sources */,
 				2563F5312496F9FF0076E1FA /* ContactsViewController.swift in Sources */,
 			);
